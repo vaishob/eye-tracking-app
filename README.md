@@ -1,8 +1,10 @@
-# m7012e
+# M7012E Pervasive Computing - Eye-tracking to Optimize Lighting for Stress Management
+
+Vaishob Anand, Hongpo, Benjamin Ong
 
 We have created a system that monitors the user's current emotional state, along with the time of day and adjusts the ambient lighting to reduce/control stress and anxiety.
 
-We aim to do this by monitoring the user's eye movements using Tobii Pro Glasses 2 and modifying ambient light via Philips Hue.
+It works by monitoring the user's eye movements using Tobii Pro Glasses 2 and modifying ambient light via Philips Hue.
  
 - This code connects to our Tobii Pro Glasses 2 eye tracker and captures the user's gaze data along with a live video stream from the glasses. It uses the captured gaze data to determine the user's stress level based on the number of gaze points that are detected in a certain time period. The code then sends a notification to a web hook called IFTTT (If This Then That) using the detected stress level as the trigger. The IFTTT can be used to control other devices or services, such as smart lights or email notifications, based on the trigger received.
 
