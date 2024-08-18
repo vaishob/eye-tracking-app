@@ -1,4 +1,4 @@
-# M7012E Pervasive Computing - Eye-tracking to Optimize Lighting for Stress Management
+# Eye-tracking Lighting System for Stress Management
 
 Vaishob Anand, Hongpo, Benjamin Ong
 
