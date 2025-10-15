@@ -2,7 +2,7 @@
 
 This project explores how **eye-tracking** and **smart lighting** can work together to imptove mental well-being. It was developed as part of the M7012E Pervasive Computing course and addresses the problem of stress and anxiety in smart-home environments. A system was built that monitors a user's eye movements in real time and automatically adapts ambient lighting to help calm the user. A demonstration of the prototype is available early on in this document to provide a quick visual overview of the system.
 
-👉 (Watch the demonstration)[https://youtu.be/3w56A3nOxEE]
+👉 Watch the (demonstration)[https://youtu.be/3w56A3nOxEE]
 
 ## Overview
 
@@ -47,11 +47,15 @@ The project team members acted as participants - three males aged 22-24 with nor
 ### Procedure & Algorithm
 The system runs in a continuous loop:
 
- **1. Collect gaze points** - Gaze coordinates are read from the Tobii API and appended to a queue. The program counts the number of significant changes (eye movements) within a sliding time window.
- **2. Classify stress level** - If the queue records few changes, the user is considered to be in a resting state or sleeping (SleepingTime). More frequent movements correspond to low, medium or high stress levels. The thresholds were determined heuristically during testing.
- **3. Adjust lighting** - When a stress threshold is crossed, the program checks the current time to decide whether the default colour should be white (day) or yellow (night). It then fires an IFTTT webhook event corresponding to the detected stress level. The Hue bulbs respond by changing to pastel blue for high stress or pink for medium stress.
- **4. Loop** - The loop continues until the user stops the program. Video frames and gaze data continue to be processed, and stress levels are updated dynamically.
+**1. Collect gaze points** - Gaze coordinates are read from the Tobii API and appended to a queue. The program counts the number of significant changes (eye movements) within a sliding time window.
 
+**2. Classify stress level** - If the queue records few changes, the user is considered to be in a resting state or sleeping (SleepingTime). More frequent movements correspond to low, medium or high stress levels. The thresholds were determined heuristically during testing.
+
+**3. Adjust lighting** - When a stress threshold is crossed, the program checks the current time to decide whether the default colour should be white (day) or yellow (night). It then fires an IFTTT webhook event corresponding to the detected stress level. The Hue bulbs respond by changing to pastel blue for high stress or pink for medium stress.
+
+**4. Loop** - The loop continues until the user stops the program. Video frames and gaze data continue to be processed, and stress levels are updated dynamically.
+
+ 
  ## Stress Levels & Lighting Responses
  The relationship between stress classification and lighting colour is summarised below. Note that the exact thresholds were chosed based on preliminary experiments and literature on colour psychology.
 
@@ -65,11 +69,16 @@ The system runs in a continuous loop:
 ## Usage Guide
 To experiment with the prototype yourself, follow these steps:
 
- **1. Hardware setup:** Acquire Tobii Pro Glasses 2 and Philips Hue bulbs (with a Hue bridge). Create a Philips account and register the bulbs. Set up an IFTTT account and configure four webhook events corresponding to the stress levels (e.g. `SleepingTime`, `LowLevelStress`, `MediumLevelStress`, `HighLevelStress`). Each IFTTT applet should change the Hue bulbs to the desired colour.
- **2. Software installation:** Clone the project repository from GitHub (`https://github.com/vaishob/m7012e`) and install dependencies (`tobii_research`, `opencv-python`, `numpy`, etc.).
- **3. Run the script:** Connect the Tobii glasses to your computer. Launch the Python program (`main.py` in the repository). The program will calibrate the glasses, begin streaming gaze data and print the current stress level along with the time and IFTTT URL in the console.
- **4. Test:** Observe the Hue bulbs as you move your eyes. During the day the lights start white, while at night they are yellow. Quick, erratic movements should cause the lights to change to pastel blue (high stress), whereas moderate movements trigger pink (medium stress). If you remain still, the lights return to their default state.
- **5. Stop:** Exit the program (e.g. press `q` in the video window). The connection to the glasses and IFTTT will be closed gracefully.
+**1. Hardware setup:** Acquire Tobii Pro Glasses 2 and Philips Hue bulbs (with a Hue bridge). Create a Philips account and register the bulbs. Set up an IFTTT account and configure four webhook events corresponding to the stress levels (e.g. `SleepingTime`, `LowLevelStress`, `MediumLevelStress`, `HighLevelStress`). Each IFTTT applet should change the Hue bulbs to the desired colour.
+
+**2. Software installation:** Clone the project repository from GitHub (`https://github.com/vaishob/m7012e`) and install dependencies (`tobii_research`, `opencv-python`, `numpy`, etc.).
+
+**3. Run the script:** Connect the Tobii glasses to your computer. Launch the Python program (`main.py` in the repository). The program will calibrate the glasses, begin streaming gaze data and print the current stress level along with the time and IFTTT URL in the console.
+
+**4. Test:** Observe the Hue bulbs as you move your eyes. During the day the lights start white, while at night they are yellow. Quick, erratic movements should cause the lights to change to pastel blue (high stress), whereas moderate movements trigger pink (medium stress). If you remain still, the lights return to their default state.
+
+**5. Stop:** Exit the program (e.g. press `q` in the video window). The connection to the glasses and IFTTT will be closed gracefully.
+ 
 
  ## Results
  Although the team did not conduct a formal user study due to time constraints, informal trials demonstrated the concept's viability. When high stress levels were simulated during the day, the system fired a webhook that turned the lights pastel blue, and participants reported feeling calmer. During night-time tests, medium stress triggered a pink light, which participants said helped them relax and fall asleep easier. These results suggest that responsive lighting based on eye-tracking may have a positive effect on stress management, though more rigorous testing is needed.
@@ -94,7 +103,5 @@ The full source code, including the Python scripts and setup instruction, is hos
 ## Credits & Acknowledgements
 This project was completed by **Vaishob Anand, Hongpo Chen and Benjamin Ong** as part of the **M7012E Pervasive Computing** course at Luleå University of Technology. The team is grateful for the guidance of **Kåre Synnes** and acknowledges the work of researchers whose studies informed the design - particularly studies on eye-tracking metrics and the role of colours in stress reduction.
 
-    ---
-    
-_For more detailed technical documentation, including code comments and class diagrams, please refer to the project report and documentation provided in this repository. The README serves as a high‑level overview and entry point to the project.
-_
+
+_For more detailed technical documentation, including code comments and class diagrams, please refer to the project report and documentation provided in this repository. The README serves as a high‑level overview and entry point to the project._
