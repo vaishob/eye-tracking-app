@@ -2,7 +2,7 @@
 
 This project explores how **eye-tracking** and **smart lighting** can work together to imptove mental well-being. It was developed as part of the M7012E Pervasive Computing course and addresses the problem of stress and anxiety in smart-home environments. A system was built that monitors a user's eye movements in real time and automatically adapts ambient lighting to help calm the user. A demonstration of the prototype is available early on in this document to provide a quick visual overview of the system.
 
-👉 Watch the (demonstration)[https://youtu.be/3w56A3nOxEE]
+👉 [Watch the demonstration](https://youtu.be/3w56A3nOxEE)
 
 ## Overview
 
