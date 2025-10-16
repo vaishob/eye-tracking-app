@@ -98,10 +98,11 @@ The current prototype demonstrates a proof-of-ceoncept, but there are several li
  * **Multiple lights:** Future versions might use a system of lights - different bulbs for sleep lighting versus general ambient lighting - to better separate functions.
 
 ## Repository & Contributions
-The full source code, including the Python scripts and setup instruction, is hosted on GitHub: (vaishob/m7012e)[https://github.com/vaishob/m7012e]. Contributions are welcome! Please open issues or pull requests to suggest improvments, report bugs or propose new features.
+The full source code, including the Python scripts and setup instruction, is hosted on GitHub: [vaishob/m7012e](https://github.com/vaishob/m7012e). Contributions are welcome! Please open issues or pull requests to suggest improvments, report bugs or propose new features.
 
 ## Credits & Acknowledgements
 This project was completed by **Vaishob Anand, Hongpo Chen and Benjamin Ong** as part of the **M7012E Pervasive Computing** course at Luleå University of Technology. The team is grateful for the guidance of **Kåre Synnes** and acknowledges the work of researchers whose studies informed the design - particularly studies on eye-tracking metrics and the role of colours in stress reduction.
 
+## 
 
 _For more detailed technical documentation, including code comments and class diagrams, please refer to the project report and documentation provided in this repository. The README serves as a high‑level overview and entry point to the project._
